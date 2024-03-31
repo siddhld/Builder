@@ -18,7 +18,7 @@ FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
 # Copy the JAR from the build stage
-COPY --from=build /target/*.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 # Entrypoint to start the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
