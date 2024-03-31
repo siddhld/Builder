@@ -1,5 +1,6 @@
-# Multi-stage build for efficiency
-FROM maven:3.8-jdk-17-slim AS build
+FROM openjdk:17-jdk-slim AS build
+
+RUN apt-get update && apt-get install -y openjdk-17-jdk maven
 
 # Copy project files
 COPY . /app
