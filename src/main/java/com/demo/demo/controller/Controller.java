@@ -3,13 +3,15 @@ package com.demo.demo.controller;
 import com.demo.demo.model.Lead;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
+
+    @GetMapping("/")
+    public ResponseEntity<String> home(){
+        return ResponseEntity.status(HttpStatus.OK).body("Welcome home");
+    }
 
     @PostMapping("/json")
     public ResponseEntity<Lead> saveJsonLead(@RequestBody Lead lead){
